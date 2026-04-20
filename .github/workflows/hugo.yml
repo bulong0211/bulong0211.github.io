@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive # 重要：拉取主题子模块
+          submodules: recursive 
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
