@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>教程 on ZMY's Blog</title><link>https://bulong0211.github.io/categories/%E6%95%99%E7%A8%8B/</link><description>Recent content in 教程 on ZMY's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>ZMY 版权所有</copyright><lastBuildDate>Mon, 20 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://bulong0211.github.io/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo 写作指南：从入门到精通</title><link>https://bulong0211.github.io/p/hugo-writing-guide/</link><pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate><guid>https://bulong0211.github.io/p/hugo-writing-guide/</guid><description>&lt;p&gt;这篇文章将带你快速掌握在 Hugo 中撰写高质量内容的技巧。从最基础的文字排版，到图片管理，再到复杂的数学公式渲染，这里都有最标准的参考写法。&lt;/p&gt;
+&lt;h2 id="1-基础排版与引用"&gt;1. 基础排版与引用
+&lt;/h2&gt;&lt;p&gt;在 Hugo 中，良好的层级结构有助于 SEO 和阅读体验。你可以使用标准的 Markdown 语法来排版。&lt;/p&gt;
+&lt;h3 id="引用示例"&gt;引用示例
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;所谓“静态网站生成器”，本质上是在你发布之前，将 Markdown 源文件预先编译成 HTML 文件的过程。这种架构极大地提升了网站的安全性与访问速度。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="2-页面包-page-bundle-模式"&gt;2. 页面包 (Page Bundle) 模式
+&lt;/h2&gt;&lt;p&gt;你现在的博客结构已经采用了 &lt;strong&gt;Page Bundle&lt;/strong&gt; 模式。这意味着：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;文章文件夹化&lt;/strong&gt;：每篇文章都有自己的文件夹。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;资源同级化&lt;/strong&gt;：图片、附件直接放在 &lt;code&gt;index.md&lt;/code&gt; 旁边即可引用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="图片引用"&gt;图片引用
+&lt;/h3&gt;&lt;p&gt;如果你在文件夹里放了一张 &lt;code&gt;cover.jpg&lt;/code&gt;，引用方式非常简单：
+&lt;img src="https://bulong0211.github.io/cover.jpg"
+loading="lazy"
+alt="本地图片描述"
+&gt;&lt;/p&gt;
+&lt;h2 id="3-代码高亮"&gt;3. 代码高亮
+&lt;/h2&gt;&lt;p&gt;Hugo 内置了强悍的代码高亮引擎。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;welcome_hugo&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Hello, Hugo World!&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="4-数学公式-katex"&gt;4. 数学公式 (KaTeX)
+&lt;/h2&gt;&lt;p&gt;通过在 Front Matter 中设置 &lt;code&gt;math: true&lt;/code&gt;，你可以书写复杂的数学公式：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;行内公式&lt;/strong&gt;：例如黄金分割比例 $\varphi = \dfrac{1+\sqrt5}{2}$。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;块级公式&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$&lt;/p&gt;
+&lt;h2 id="5-数据表格"&gt;5. 数据表格
+&lt;/h2&gt;&lt;p&gt;表格是展示对比数据的利器：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;功能&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;状态&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Markdown 渲染&lt;/td&gt;
+&lt;td&gt;✅ 支持&lt;/td&gt;
+&lt;td&gt;由 Goldmark 驱动&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图片处理&lt;/td&gt;
+&lt;td&gt;✅ 支持&lt;/td&gt;
+&lt;td&gt;可自动缩放和剪裁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;多语言支持&lt;/td&gt;
+&lt;td&gt;✅ 支持&lt;/td&gt;
+&lt;td&gt;现已配置中文&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item></channel></rss>
