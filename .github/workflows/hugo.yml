@@ -1,8 +1,7 @@
-name: Deploy Hugo site to Pages
-
+name: Deploy
 on:
   push:
-    branches: ["main"] # 监听 main 分支的推送
+    branches: [main]
 
 permissions:
   contents: read
@@ -10,38 +9,29 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive 
+          submodules: recursive
+          fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
-          extended: true # 如果主题需要 Sass/SCSS
+          extended: true 
 
-      - name: Build
-        run: hugo --minify
+      - name: Build Web
+        run: hugo -D
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy Web
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: ./public
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        
-        
-        
+          PERSONAL_TOKEN: ${{ secrets.Token }}
+          EXTERNAL_REPOSITORY: bulong0211/bulong0211.github.io
+          PUBLISH_BRANCH: main
+          PUBLISH_DIR: ./public
+          commit_message: auto deploy
