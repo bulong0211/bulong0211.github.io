@@ -25,13 +25,13 @@ jobs:
           extended: true 
 
       - name: Build Web
-        run: hugo -D
+        run: hugo --minify
 
       - name: Deploy Web
-          uses: peaceiris/actions-gh-pages@v4
-          with:
-              PERSONAL_TOKEN: ${{ secrets.Token }}
-              EXTERNAL_REPOSITORY: bulong0211/bulong0211.github.io
-              PUBLISH_BRANCH: main
-              PUBLISH_DIR: ./public
-              commit_message: auto deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          PERSONAL_TOKEN: ${{ secrets.Token }}
+          EXTERNAL_REPOSITORY: bulong0211/bulong0211.github.io
+          PUBLISH_BRANCH: main
+          PUBLISH_DIR: ./public
+          commit_message: auto deploy
