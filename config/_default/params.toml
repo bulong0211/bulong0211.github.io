@@ -1,14 +1,14 @@
 mainSections   = ["post"]
 rssFullContent = true
-favicon        = "assets/img/avatar.jpg"
+favicon        = "img/avatar.jpg"
 
 [footer]
     since = 2020
 
 [sidebar]
     emoji    = "✏️"
-    subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    avatar   = "assets/img/avatar.jpg"
+    subtitle = "你好，这是我的个人博客。"
+    avatar   = "img/avatar.jpg"
 
 [article]
     [article.license]
