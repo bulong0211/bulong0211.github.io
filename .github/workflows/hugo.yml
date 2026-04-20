@@ -3,23 +3,36 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true  # 如果你以后改用 submodule 方式
+          # 即使不使用 submodule，建议保留以防万一
+          submodules: recursive
           fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
-          extended: true # 必须开启 extended 版本以支持 Stack 主题的 SCSS
+          # 必须设为 true 以支持 Stack 主题的样式编译
+          extended: true 
 
       - name: Build
         run: hugo --minify
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
       - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@v4
