@@ -3,7 +3,7 @@ languageCode: zh-cn
 theme: hugo-theme-stack
 paginate: 3
 title: ZMY’s Blog
-copyright: ZMY
+copyright: ZMY 版权所有
 
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
@@ -65,7 +65,7 @@ params:
     article:
         math: false
         toc: true
-        readingTime: false
+        readingTime: true
         license:
             enabled: false
             default: Licensed under CC BY-NC-SA 4.0
@@ -200,8 +200,8 @@ menu:
 
     social:
         - identifier: bilibili
-          name: GitHub
-          url: https://github.com/CaiJimmy/hugo-theme-stack
+          name: Bilibili
+          url: https://space.bilibili.com/175317360?spm_id_from=333.1007.0.0
           params:
               icon: brand-bilibili
         
