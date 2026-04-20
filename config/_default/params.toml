@@ -7,8 +7,8 @@ favicon        = "img/avatar.jpg"
 
 [sidebar]
     emoji    = "✏️"
-    subtitle = "你好，这是我的个人博客。"
-    avatar   = "img/avatar.jpg"
+    subtitle = "你好，这是周明源的个人博客。"
+    avatar   = "img/psc.jpg"
 
 [article]
     [article.license]
